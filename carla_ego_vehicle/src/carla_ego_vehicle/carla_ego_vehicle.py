@@ -112,7 +112,7 @@ class CarlaEgoVehicle(object):
         blueprint.set_attribute('role_name', "{}".format(self.role_name))
         if blueprint.has_attribute('color'):
             color = secure_random.choice(blueprint.get_attribute('color').recommended_values)
-            blueprint.set_attribute('color', color)
+            blueprint.set_attribute('color', "255,255,255")
         # Spawn the vehicle.
         if not rospy.get_param('~spawn_ego_vehicle'):
             actors = self.world.get_actors().filter(self.actor_filter)
